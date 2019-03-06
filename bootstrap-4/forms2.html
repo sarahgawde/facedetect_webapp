@@ -1,0 +1,179 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="css/custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	 <title>User Login</title>
+  	</head>
+  	<body style="background-color: black ">
+
+<style>
+
+  #navlist {
+  position: relative;
+}
+
+#navlist li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  top: 0;
+}
+
+#navlist li, #navlist a {
+  height: 44px;
+  display: block;
+}
+
+#home {
+  left: 0px;
+  width: 46px;
+  background: url('img/home.png') 0 0;
+}
+
+#prev {
+  left: 63px;
+  width: 43px;
+  background: url('img/left.png') -47px 0;
+}
+
+#next {
+  left: 129px;
+  width: 43px;
+  background: url('img/right.png') -91px 0;
+}
+</style>
+
+
+<div class="container">
+  <ul id="navlist">
+  <li id="home"><a href="./navign.html#"></a></li>
+  <li id="prev"><a href="./navign.html#"></a></li>
+  <li id="next"><a href="#"></a></li>
+</ul>
+  <br>
+
+  		  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid" >
+      <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+       <span class="sr-only"> Toggle navigation</span>
+        <span class="icon-bar"> </span>
+        <span class="icon-bar"> </span>
+        <span class="icon-bar"> </span> 
+      </button>
+      <!--  <a class="navbar-brand" href="#"> Placement Cell </a>-->
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"> <a href="./navign.html"> HOME </a> </li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown"> ABOUT <b class="caret"> </b>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header"> <a href="./company.html"> Contact Us </a> </li>
+                <li class="dropdown-header"> <a href="#"> Founders</a> </li>
+              </ul>
+          </li>
+          <li class="active"> <a href="./admin.html"> ADMIN </a> </li>
+          <li class="active"> <a href="./forms2.html"> USER </a> </li>
+        </ul>
+      </div>
+  </nav>
+
+<!------ Include the above in your HEAD tag ---------->
+
+<!-- All the files that are required -->
+
+
+<!-- Where all the magic happens -->
+<!-- LOGIN FORM -->
+<div class ="container" style="color: white">
+
+	<!--<div class="full-bg-img"> -->
+  	<div class= "row">
+  		<div class="col-xs-6 ">
+  		</br>
+  			<div class="logo text-center"><h2 style="color: white">Login</h2></div>
+	<!-- Main Form -->
+			<div class="login-form-1">
+				<form method="post" id="login-form" class="text-left">
+					<div class="login-form-main-message"></div>
+					<div class="main-login-form">
+						<div class="login-group">
+							<form action="" method="">
+							<div class="form-group">
+              </br>
+                <label for="lg_username" >Username</label>
+                <input type="text" class="form-control" id="lg_username" name="lg_username" placeholder=" Username" required/>
+              </div>
+              <div class="form-group">
+                <label for="lg_password">Password</label>
+                <input type="password" class="form-control" id="lg_password" name="lg_password" placeholder="password" required/>
+              </div>
+							<div class="etc-login-form text-right">
+									<a href="./fp.html" style="color: white">Forgot Password?</a>
+							</div>
+							<div class="form-group login-group-checkbox">
+								<input type="checkbox" id="lg_remember" name="lg_remember">
+								<label for="lg_remember" style="color: white">Remember</label>
+							</div>
+							</form>
+						</div>
+            <button type="Submit" class="btn btn-success" onclick="check()">Submit<i class="fa fa-chevron-right"></i></button>
+            </div>
+          <div class="etc-login-form"></br>
+            <p style="color: white">New User? <a href="./reg.html" style="color: blue ">Sign in (create a new account)</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- end:Main Form -->
+</div>
+<script language="Javascript" type="text/javascript">
+  function validatePassword() {
+    var p = document.getElementById('lg_password').value,
+        errors = [];
+    if (p.length < 8) {
+        errors.push("Your password must be at least 8 characters"); 
+    }
+    if (p.search(/[a-z]/i) < 0) {
+        errors.push("Your password must contain at least one letter.");
+    }
+    if (p.search(/[0-9]/) < 0) {
+        errors.push("Your password must contain at least one digit."); 
+    }
+    if (errors.length > 0) {
+        alert(errors.join("\n"));
+        return false;
+    }
+    return true;
+}
+
+function check()
+{
+
+  var flag = validatePassword();
+  if(flag)
+  {
+    
+    window.open("./sidebar/userindex.html");
+    alert("Login successful");
+  }
+  else
+  {
+    alert("Try Again!!");
+  }
+
+}
+</script>
+</body>
+</html>
+
